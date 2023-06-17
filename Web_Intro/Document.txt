@@ -1,0 +1,17 @@
+﻿
+
+* PROPERTIES => launchSetting.json : uygulamayı başlatmak için gerekli tüm bilgiler, kullanıcı profilleri yer alır.
+
+*APPSETTINGS.JSON => Tüm bağlantı dizeler (connectionstring), uygulamayla ilgili kod sabitlerini json formatında bulduğumuz yerdir.
+
+* PROGRAM.CS => Uygulamanın giriş noktasıdır ana yöntemi içerir.
+
+* DEPENDENCIES => içinde gömülü iki dosya bulunur.
+				 Mic. AspNetCore.App => web ile ilgili framework.
+				 Mic. NetCore.App => sistem ile ilgili işlerin kapsayan framework
+
+* STARTUP.CS => uygulamada kullanılan hizmetlerin tanıtımı, ayarları, ara yazımların (middleware) eklendiği, HTTP isteklerinin yapılandırıldığı yerdir.
+
+* MIDDLEWARE (ARA YAZILIM) => Requset(istek)-response(cevap) pipeline işlemimizi sağlayan bir çeşit interceptor(metod çağrıları sırasında araya girerek kesişen istekleri yöneten yapı) görevi görür. her bileşen isteğin işlem hattından geçiğ geçmeyeceü,, kesiştiklerinde neler olacağını yönetir. STARTUP içindeki CONFIGURE metodunda çağrılır.
+
+* KASTREL SERVER => Asp
