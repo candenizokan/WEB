@@ -48,6 +48,12 @@ namespace Web_Route
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //static route
+                endpoints.MapControllerRoute(
+                    name: "test",
+                    pattern: "test",
+                    defaults: new {Controller="Home",Action="Test"});
             });
         }
     }
