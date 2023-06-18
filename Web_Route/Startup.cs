@@ -64,7 +64,7 @@ namespace Web_Route
                 //olası bir hata durumunda: az/çok parametreli bir durum yada elimizde olmayan bir kontola gitme isteği vb.. gibi durumlarda geçersiz bir adresle karşılaştığımızı yönlendirelecek bir action ve view oluşturabiliriz.
                 endpoints.MapControllerRoute(
                     name: "found",
-                    pattern: "url",
+                    pattern: "{*url}",
                     defaults: new { Controller = "Home", Action = "NotFoundAction" });
 
             });

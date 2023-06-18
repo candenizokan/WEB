@@ -44,6 +44,7 @@ namespace Web_Route.Controllers
         }
 
         public IActionResult NotFoundAction()
+        
         {
             return View();
         }
