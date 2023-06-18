@@ -65,7 +65,7 @@ namespace Web_Route
                 endpoints.MapControllerRoute(
                     name: "found",
                     pattern: "url",
-                    defaults: new { Controller = "Home", Action = "NotFound" });
+                    defaults: new { Controller = "Home", Action = "NotFoundAction" });
 
             });
         }
