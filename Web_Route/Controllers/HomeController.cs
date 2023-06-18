@@ -39,7 +39,7 @@ namespace Web_Route.Controllers
         }
 
         public IActionResult Deneme(string isim, string id)
-        {
+        {//string parametre adı name olsa görecektim
             return View();
         }
 
