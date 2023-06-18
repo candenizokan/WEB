@@ -54,6 +54,12 @@ namespace Web_Route
                     name: "test",
                     pattern: "test",
                     defaults: new {Controller="Home",Action="Test"});
+
+                //dynamic route
+
+                endpoints.MapControllerRoute(
+                    name: "dinamic",
+                    pattern: "{controller=Kategori}/{action=Detay}/{name}/{id}");
             });
         }
     }
