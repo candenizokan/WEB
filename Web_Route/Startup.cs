@@ -60,6 +60,13 @@ namespace Web_Route
                 endpoints.MapControllerRoute(
                     name: "dinamic",
                     pattern: "{controller=Kategori}/{action=Detay}/{name}/{id}");
+
+                //olası bir hata durumunda: az/çok parametreli bir durum yada elimizde olmayan bir kontola gitme isteği vb.. gibi durumlarda geçersiz bir adresle karşılaştığımızı yönlendirelecek bir action ve view oluşturabiliriz.
+                endpoints.MapControllerRoute(
+                    name: "found",
+                    pattern: "url",
+                    defaults: new { Controller = "Home", Action = "NotFound" });
+
             });
         }
     }
