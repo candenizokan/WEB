@@ -14,4 +14,6 @@
 
 * MIDDLEWARE (ARA YAZILIM) => Requset(istek)-response(cevap) pipeline işlemimizi sağlayan bir çeşit interceptor(metod çağrıları sırasında araya girerek kesişen istekleri yöneten yapı) görevi görür. her bileşen isteğin işlem hattından geçiğ geçmeyeceü,, kesiştiklerinde neler olacağını yönetir. STARTUP içindeki CONFIGURE metodunda çağrılır.
 
-* KASTREL SERVER => Asp
+* KASTREL SERVER => Asp.NetCore için tasarlanan platformlar arası çalışan gömülü gelen bir web sunucusudur. Core ile gelen OpenSource(AçıkKaynak), ücretsiz, CrossPlatform(farklı platformlarda çalışan) linux, windows, macos gibi ortamlarda uygulamayı çalışır hale getiren sunucudur.
+
+* NetCore öncesi uygulamalar sadece Windowsta çalışıyordu fakat artık çapraz platfırm çalışabiliyor Kestrel sayesinde ve Kestrel aynı zamanda bir ara yazılımdır. Uygulamayı yayınlamak için Apache, Nodejs, ISS(default) hizmetlerden herhangi biri kullanılabilir
