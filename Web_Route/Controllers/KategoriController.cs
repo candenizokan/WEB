@@ -13,5 +13,10 @@ namespace Web_Route.Controllers
         {
             return View();
         }
+
+        public IActionResult Detay(string name, string id)
+        {
+            return View();
+        }
     }
 }
