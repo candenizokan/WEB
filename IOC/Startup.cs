@@ -1,5 +1,7 @@
+﻿using IOC.Models.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +25,12 @@ namespace IOC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //appstingde connectionstringim var.ismi Default olan cümleciğim var. 
+            //bu db contexti ekle. dbcontexten kalıtım alan bir sınıfını ekle. ProjectContext db context sınıfıdır.
+            //ProjectContext sınıfıma diyorumki options öyleki bu sql server metodunu kullan UseSqlServer. buda bağlantı cümleciği bekliyor. oda appsettingdeki default adındaki bağlantı cümleciğim. onu getir diyorum GetConnectionString. böylece ProjectContext sınıfına bağlıyorum. eskiden içinde yazıyorumdum şimdi startupda kod sabitlerimi yazıyorum.
+
+            services.AddDbContext<ProjectContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

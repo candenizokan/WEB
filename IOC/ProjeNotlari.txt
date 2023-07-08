@@ -35,3 +35,14 @@ ilişkiler, kurallar varsa bunları söylüyoruz
 bunları app settig.jsona yazacağım
 
 appsettingde bağlantı cümlemi yazacağım
+sonra startupda configıreservicesde bağlantı cümlem appde bilmek isteyen context sınıfında startupda ikisini konuşturuyorum
+AddDbContext db context sınıfını ekle
+
+
+***appstingde connectionstringim var.ismi Default olan cümleciğim var. 
+"ConnectionStrings": { "default": "Server=GNRM-LAB05-PC15;Database=IOC;UId=sa;Password=123;" }
+
+bu db contexti ekle. dbcontexten kalıtım alan bir sınıfını ekle. ProjectContext db context sınıfıdır.
+ProjectContext sınıfıma diyorumki options öyleki bu sql server metodunu kullan UseSqlServer. buda bağlantı cümleciği bekliyor. oda appsettingdeki default adındaki bağlantı cümleciğim. onu getir diyorum GetConnectionString. böylece ProjectContext sınıfına bağlıyorum. eskiden içinde yazıyorumdum şimdi startupda kod sabitlerimi yazıyorum.
+
+şimdi göç başlatacağım.
