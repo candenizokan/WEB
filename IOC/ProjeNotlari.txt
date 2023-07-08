@@ -17,3 +17,19 @@ kategori sınıfımı oluşturdum. bir kategorinin çokça ürünü olur. çoklu
 
 *Supplier.cs
 bir tedarikçininde çokça ürünü vardır
+
+
+
+burada maplameye girmeyeceğim configurasyonlara girmeyeceğim onu ilerde yapacağım. verileri şimdilik db tarafında gireceğim.
+
+bu aşamada context folderımı oluşturup sınıfımı oluşturacağım bu beni db'ye bağlayacak
+bu sunıf db context sınıfından kalıtım aldığından anlıyor.
+
+*nugetleradan ef core sql server, ef core tools, unity indirdim
+
+*context sınıfında en teml olarak 3 şey söylüyoruz
+kendi bağlantı cümlemiz
+tablolarımız,db setleri
+ilişkiler, kurallar varsa bunları söylüyoruz
+
+bunları app settig.jsona yazacağım
