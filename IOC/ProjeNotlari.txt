@@ -33,3 +33,5 @@ tablolarımız,db setleri
 ilişkiler, kurallar varsa bunları söylüyoruz
 
 bunları app settig.jsona yazacağım
+
+appsettingde bağlantı cümlemi yazacağım
