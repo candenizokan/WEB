@@ -12,5 +12,8 @@ id sini oluşturduktan sonra nesnesinide eklemeliyim ki veri çekebileyim
 
 product clasımda category ve supplier için id ve nesnesinide oluşturdum
 
-
+*Category.cs
 kategori sınıfımı oluşturdum. bir kategorinin çokça ürünü olur. çokluk yapısını koleksiyon yapısında tutarım
+
+*Supplier.cs
+bir tedarikçininde çokça ürünü vardır
