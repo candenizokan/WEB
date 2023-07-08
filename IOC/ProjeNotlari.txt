@@ -54,4 +54,7 @@ update-database
 kendi metod kütüphanemi yazacağım
 
 yeni klasör oluşturacağım Infrastructure bize hizmet eden klasör
+irepository
+productcontext
+
 
