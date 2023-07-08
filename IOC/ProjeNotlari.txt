@@ -50,3 +50,8 @@ add-migration one
 sonra
 update-database
 
+--repo yazacağım. ioc yi burada kullanacağım
+kendi metod kütüphanemi yazacağım
+
+yeni klasör oluşturacağım Infrastructure bize hizmet eden klasör
+
