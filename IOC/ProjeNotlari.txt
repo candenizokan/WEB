@@ -1,0 +1,13 @@
+﻿08.07.2023
+*önce çalışacağım sınıfları oluşturuyorum
+
+ilk olarak modelsde modellerimi oluşturuyorum
+
+
+*models içinde product oluşturdum
+
+1-n ilişkide çok olan tarafta tek olan tarafın tek olanın id sini barındırırsın
+bir kategoride çok ürün yer alır product tarafında kategorinin id sinin barındır
+id sini oluşturduktan sonra nesnesinide eklemeliyim ki veri çekebeliyim
+
+product clasımda category ve supplier için id ve nesnesinide oluşturdum
