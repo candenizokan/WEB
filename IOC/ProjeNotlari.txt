@@ -45,4 +45,8 @@ AddDbContext db context sınıfını ekle
 bu db contexti ekle. dbcontexten kalıtım alan bir sınıfını ekle. ProjectContext db context sınıfıdır.
 ProjectContext sınıfıma diyorumki options öyleki bu sql server metodunu kullan UseSqlServer. buda bağlantı cümleciği bekliyor. oda appsettingdeki default adındaki bağlantı cümleciğim. onu getir diyorum GetConnectionString. böylece ProjectContext sınıfına bağlıyorum. eskiden içinde yazıyorumdum şimdi startupda kod sabitlerimi yazıyorum.
 
-şimdi göç başlatacağım.
+*şimdi göç başlatacağım.
+add-migration one
+sonra
+update-database
+
