@@ -8,5 +8,11 @@ namespace IOC.Models.Context
         {
 
         }
+
+        //dbsetler hangi tablolarım ayağa kalkacak
+
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
