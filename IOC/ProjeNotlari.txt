@@ -66,4 +66,6 @@ productcontreller oluşturdum
 
 product nesnesi oluşturup göndermek amacım var
 
+boş product nesnesi yollayacağım
+
 
