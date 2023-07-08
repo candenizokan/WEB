@@ -57,4 +57,13 @@ yeni klasör oluşturacağım Infrastructure bize hizmet eden klasör
 irepository
 productcontext
 
+Concrete/CategoryRepository
+Concrete/SupplierRepository
+
+repolarımı yazdım artık controllerımla ihtiyaçları karşılayabilirim
+
+productcontreller oluşturdum
+
+product nesnesi oluşturup göndermek amacım var
+
 
