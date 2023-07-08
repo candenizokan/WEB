@@ -1,6 +1,6 @@
 ﻿08.07.2023
-*önce çalışacağım sınıfları oluşturuyorum
 
+*önce çalışacağım sınıfları oluşturuyorum
 ilk olarak modelsde modellerimi oluşturuyorum
 
 
@@ -8,6 +8,9 @@ ilk olarak modelsde modellerimi oluşturuyorum
 
 1-n ilişkide çok olan tarafta tek olan tarafın tek olanın id sini barındırırsın
 bir kategoride çok ürün yer alır product tarafında kategorinin id sinin barındır
-id sini oluşturduktan sonra nesnesinide eklemeliyim ki veri çekebeliyim
+id sini oluşturduktan sonra nesnesinide eklemeliyim ki veri çekebileyim
 
 product clasımda category ve supplier için id ve nesnesinide oluşturdum
+
+
+kategori sınıfımı oluşturdum. bir kategorinin çokça ürünü olur. çokluk yapısını koleksiyon yapısında tutarım
