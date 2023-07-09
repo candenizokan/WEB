@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Unity.Microsoft.DependencyInjection;
 
 namespace IOC
 {
@@ -17,7 +18,7 @@ namespace IOC
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+            Host.CreateDefaultBuilder(args).UseUnityServiceProvider()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
