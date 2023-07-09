@@ -2,6 +2,8 @@
 using IOC.Models;
 using IOC.Models.VMs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace IOC.Controllers
 {
@@ -21,7 +23,7 @@ namespace IOC.Controllers
 
             var model = new CreateProductVM()
             {
-                
+                Categories = _crepo.GetAll().Select(a => new SelectListItem { Text = a.Name, Value = a.CategoryId.ToString() }).ToList(),
             };
             return View();
         }
