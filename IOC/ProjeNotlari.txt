@@ -69,3 +69,14 @@ product nesnesi oluşturup göndermek amacım var
 boş product nesnesi yollayacağım
 
 
+
+09.07.2023
+
+tüm kategorileri taşısın
+tüm satıcıları taşısın
+bir tanede ürün göstersin
+
+bunun için CreateProductVM oluşturduk
+
+
+

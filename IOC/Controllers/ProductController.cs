@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IOC.Models.VMs;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IOC.Controllers
 {
@@ -7,6 +8,12 @@ namespace IOC.Controllers
        [HttpGet]//defaultta httpget olarak kabul eder
        public IActionResult Create()
         {
+            //CreateProductVM nesnesi oluşturayım ve on doldurayım.
+
+            var model = new CreateProductVM()
+            {
+                
+            };
             return View();
         }
     }
