@@ -5,6 +5,12 @@ namespace IOC.Controllers
 {
     public class ProductController : Controller
     {
+
+        public ProductController()
+        {
+
+        }
+
        [HttpGet]//defaultta httpget olarak kabul eder
        public IActionResult Create()
         {
