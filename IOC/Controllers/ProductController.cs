@@ -10,10 +10,12 @@ namespace IOC.Controllers
     public class ProductController : Controller
     {
         private readonly IRepository<Category> _crepo;
+        private readonly IRepository<Supplier> _srepo;
 
-        public ProductController(IRepository<Category> crepo)
+        public ProductController(IRepository<Category> crepo, IRepository<Supplier> srepo)
         {
             _crepo = crepo;
+            _srepo = srepo;
         }
 
        [HttpGet]//defaultta httpget olarak kabul eder
