@@ -37,7 +37,12 @@ namespace IOC.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
-            return View();
+            _prepo.Add(product);
+            int sonuc = _prepo.Save();
+            if (sonuc > 0)
+                return RedirectToAction("List");
+            else 
+                return NotFound();
         }
 
     }
