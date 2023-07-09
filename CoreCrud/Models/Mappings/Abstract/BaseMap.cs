@@ -1,6 +1,6 @@
 ﻿namespace CoreCrud.Models.Mappings.Abstract
 {
-    public class BaseMap
+    public class BaseMap : IEntityTypeConfiguration
     {
     }
 }
