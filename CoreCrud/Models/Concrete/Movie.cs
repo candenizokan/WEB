@@ -6,6 +6,12 @@ namespace CoreCrud.Models.Concrete
 {
     public class Movie:BaseEntity
     {
+        //Bu sınıftan bir instance alındığında listenin varlığı olsun.ctorda yapıyorum
+        public Movie()
+        {
+            MovieActor = new List<MovieActor>();//movie instance alındığında kendi içinde list yapısı oluşmuş olarak gelir.
+        }
+
         public string Name { get; set; }
         public DateTime PublishDate { get; set; }
 
