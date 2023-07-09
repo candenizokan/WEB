@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Mappings\Abstract\" />
     <Folder Include="Models\Mappings\Concrete\" />
   </ItemGroup>
 
