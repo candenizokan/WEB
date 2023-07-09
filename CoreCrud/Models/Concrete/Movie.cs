@@ -14,9 +14,9 @@ namespace CoreCrud.Models.Concrete
         //1 filmin 1 yönetmeni vardır
 
         public int DirectorId { get; set; }
-        public Director Director { get; set; }
+        public virtual Director Director { get; set; }
 
         //1 filmin çokça oyuncusu vardır
-        public List<MovieActor> MovieActor { get; set; }
+        public virtual List<MovieActor> MovieActor { get; set; }//virtual keywordü eklediğimde LAZY LOADING yağılmış olur. yeterli gemez. Mic.Efcore.Proxy paketi indirilmeli
     }
 }
