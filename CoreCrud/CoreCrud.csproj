@@ -9,4 +9,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.21" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Abstract\" />
+    <Folder Include="Models\Concrete\" />
+  </ItemGroup>
+
 </Project>
