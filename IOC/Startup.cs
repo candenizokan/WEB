@@ -41,6 +41,7 @@ namespace IOC
         {
             //ben bu adamın soyut halini (IRepository<Category>) söyleyeceğim bana gerçek tipinden(CategoryRepository) ver diyorum
             container.RegisterType<IRepository<Category>, CategoryRepository>();//şimdi program.cs'e gidip Unity'i kullanmak için gerekli methodu yazacağım
+            container.RegisterType<IRepository<Supplier>, SupplierRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
