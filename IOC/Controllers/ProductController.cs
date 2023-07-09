@@ -45,5 +45,9 @@ namespace IOC.Controllers
                 return NotFound();
         }
 
+        public IActionResult List()
+        {
+            return View(_prepo.GetAll());
+        }
     }
 }
