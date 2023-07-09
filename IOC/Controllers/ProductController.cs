@@ -11,15 +11,17 @@ namespace IOC.Controllers
     {
         private readonly IRepository<Category> _crepo;
         private readonly IRepository<Supplier> _srepo;
+        private readonly IRepository<Product> _prepo;
 
-        public ProductController(IRepository<Category> crepo, IRepository<Supplier> srepo)
+        public ProductController(IRepository<Category> crepo, IRepository<Supplier> srepo, IRepository<Product> prepo)
         {
             _crepo = crepo;
             _srepo = srepo;
+            _prepo = prepo;
         }
 
-       [HttpGet]//defaultta httpget olarak kabul eder
-       public IActionResult Create()
+        [HttpGet]//defaultta httpget olarak kabul eder
+        public IActionResult Create()
         {
             //CreateProductVM nesnesi oluşturayım ve on doldurayım.
 
@@ -31,5 +33,12 @@ namespace IOC.Controllers
             };
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+            return View();
+        }
+
     }
 }
