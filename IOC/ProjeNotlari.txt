@@ -78,5 +78,9 @@ bir tanede ürün göstersin
 
 bunun için CreateProductVM oluşturduk
 
+CategoryReponun,ProductRepo,SuplierRepo hepsinin kökeni IRepository
+
+IOC=> ortak bir soyut katmandan gelirsen(IRepository) bana bu tipten birşey ver diyecem o bana alt tipten(CategoryRepoyu) verecek
+IRepository<Category> istediğimde CategoryRepository tipinde ver diyeceğim. bunu startupda yazacağım startupda yenii bir metod yazacağım ConfigureContainer diye
 
 
