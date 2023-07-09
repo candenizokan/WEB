@@ -21,7 +21,7 @@ namespace CoreCrud.Models.Concrete
 
         //navigation property
 
-        //1 yönetmen,n çokça filmi olabilir
+        //1 yönetmenin çokça filmi olabilir
         public virtual List<Movie> Movies { get; set; }
     }
 }
