@@ -7,7 +7,7 @@ namespace CoreCrud.Models.Concrete
     public class Director:BaseEntity
     {
 
-        // bir sınıfın içinde başka sınıfın elemanlarını taşıyorsam ctorda çağırayım
+        // bir sınıfın içinde başka sınıfın elemanlarını koleksiyon yapısını taşıyorsam ctorda çağırayım
         public Director()
         {
             Movies = new List<Movie>();
