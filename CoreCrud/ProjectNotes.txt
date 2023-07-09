@@ -1,1 +1,7 @@
 ﻿
+
+* Modellerin oluşturulması lazım
+
+* Modellere ait konfigurasyonlar yapılmalı
+
+* Context oluşturum - göç başlat (add-migration + update database)
