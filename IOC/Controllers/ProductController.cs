@@ -26,8 +26,10 @@ namespace IOC.Controllers
             var model = new CreateProductVM()
             {
                 Categories = _crepo.GetAll().Select(a => new SelectListItem { Text = a.Name, Value = a.CategoryId.ToString() }).ToList(),
+                Suppliers = _srepo.GetAll().Select(a => new SelectListItem { Text = a.Name, Value = a.SupplierId.ToString() }).ToList(),
+                Product = new Product()
             };
-            return View();
+            return View(model);
         }
     }
 }
