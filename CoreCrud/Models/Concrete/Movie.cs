@@ -1,5 +1,6 @@
 ﻿using CoreCrud.Models.Abstract;
 using System;
+using System.Collections.Generic;
 
 namespace CoreCrud.Models.Concrete
 {
@@ -14,5 +15,8 @@ namespace CoreCrud.Models.Concrete
 
         public int DirectorId { get; set; }
         public Director Director { get; set; }
+
+        //1 filmin çokça oyuncusu vardır
+        public List<MovieActor> MovieActor { get; set; }
     }
 }
