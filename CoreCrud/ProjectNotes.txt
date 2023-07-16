@@ -5,3 +5,5 @@
 * Modellere ait konfigurasyonlar yapılmalı
 
 * Context oluşturum - göç başlat (add-migration + update database)
+
+startupda efcore. proxeies indireceğim
