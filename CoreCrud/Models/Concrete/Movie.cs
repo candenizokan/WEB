@@ -9,7 +9,7 @@ namespace CoreCrud.Models.Concrete
         //Bu sınıftan bir instance alındığında listenin varlığı olsun.ctorda yapıyorum
         public Movie()
         {
-            MovieActor = new List<MovieActor>();//movie instance alındığında kendi içinde list yapısı oluşmuş olarak gelir.
+            MovieActors = new List<MovieActor>();//movie instance alındığında kendi içinde list yapısı oluşmuş olarak gelir.
         }
 
         public string Name { get; set; }
@@ -23,6 +23,6 @@ namespace CoreCrud.Models.Concrete
         public virtual Director Director { get; set; }
 
         //1 filmin çokça oyuncusu vardır
-        public virtual List<MovieActor> MovieActor { get; set; }//virtual keywordü eklediğimde LAZY LOADING yağılmış olur. yeterli gemez. Mic.Efcore.Proxy paketi indirilmeli
+        public virtual List<MovieActor> MovieActors { get; set; }//virtual keywordü eklediğimde LAZY LOADING yağılmış olur. yeterli gemez. Mic.Efcore.Proxy paketi indirilmeli
     }
 }
