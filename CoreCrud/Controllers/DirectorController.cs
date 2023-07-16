@@ -27,6 +27,8 @@ namespace CoreCrud.Controllers
             if (ModelState.IsValid)
             {
                 Director director = new Director() { FirstName =dto.FirstName, LastName =dto.LastName,BirthDate =dto.BirthDate };
+
+                _dRepo.Create(director);
             }
             return View(dto);
         }
