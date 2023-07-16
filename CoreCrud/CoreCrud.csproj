@@ -18,7 +18,6 @@
   <ItemGroup>
     <Folder Include="Infrastructure\Abstarct\" />
     <Folder Include="Infrastructure\Concrete\" />
-    <Folder Include="Infrastructure\Interfaces\Concrete\" />
   </ItemGroup>
 
 </Project>
