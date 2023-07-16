@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreCrud.Infrastructure.Helpers;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreCrud.Models.DTOs
@@ -17,6 +18,7 @@ namespace CoreCrud.Models.DTOs
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Lütfen tarih giriniz")]
+        [CustomRangeAttribute(ErrorMessage ="girilen tarih 18 yıl ve 110 yıl öncesinde olmalıdır.")]
         public DateTime? BirthDate { get; set; }
     }
 }
