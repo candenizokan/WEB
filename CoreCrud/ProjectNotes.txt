@@ -12,3 +12,5 @@ startupda efcore. proxeies indireceğim
 							 Mic.EfCore.Tools - göç
 							 Mic.EfCore.Proxies - lazy loading için
 							 Startup da yazılan kodlar unutulmamalı.
+
+* Contollerımda kullanmak üzere repolarımı yazabiliriz.Infrastructure klasörü => interface, abstract ve concrete klasörleri
