@@ -7,3 +7,8 @@
 * Context oluşturum - göç başlat (add-migration + update database)
 
 startupda efcore. proxeies indireceğim
+
+*** NOT => geekli paketler : Mic.EfCore.SqlServer
+							 Mic.EfCore.Tools - göç
+							 Mic.EfCore.Proxies - lazy loading için
+							 Startup da yazılan kodlar unutulmamalı.

@@ -12,7 +12,7 @@ namespace CoreCrud.Models.Mappings.Concrete
             builder.HasKey(a => new { a.ActorId, a.MovieId });//ikiside primary key
             builder.HasOne(a => a.Movie).WithMany(a=>a.MovieActors).HasForeignKey(a=>a.MovieId);
             builder.HasOne(a => a.Actor).WithMany(a=>a.MovieActors).HasForeignKey(a=>a.ActorId);
-            throw new System.NotImplementedException();
+        
         }
     }
 }
