@@ -1,3 +1,5 @@
+﻿using CoreCrud.Infrastructure.Concrete;
+using CoreCrud.Infrastructure.Interfaces.Concrete;
 using CoreCrud.Models.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +33,12 @@ namespace CoreCrud
                 opt.UseSqlServer(Configuration.GetConnectionString("Default"));
                 opt.UseLazyLoadingProxies(true);
             });
+
+            //ben senden IDirector dediğimde DirectorRepo ver
+
+            services.AddScoped<IDirector, DirectorRepo>();
+
+            //Todo : addscoped - addtransiet - addsingleton araştır
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
