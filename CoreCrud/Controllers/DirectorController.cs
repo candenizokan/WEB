@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CoreCrud.Models.Concrete;
+using CoreCrud.Models.DTOs;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CoreCrud.Controllers
 {
@@ -11,6 +13,15 @@ namespace CoreCrud.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Create(CreateDirectorDTO dto)
+        {
+            if (ModelState.IsValid)
+            {
+                Director director = new Director() { FirstName =dto.FirstName, LastName =dto.LastName,BirthDate =dto.BirthDate };
+            }
+            return View(dto);
+        }
 
     }
 }
