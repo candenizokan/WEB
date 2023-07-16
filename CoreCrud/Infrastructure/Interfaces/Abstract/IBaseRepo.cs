@@ -22,7 +22,7 @@ namespace CoreCrud.Infrastructure.Interfaces.Abstract
 
 
         List<TResult> GetByDefaults<TResult>(Expression<Func<T,TResult>> selector,  //select seçim
-                                             Expression<Func<T, TResult>> expression,//filtreleme - where
+                                             Expression<Func<T, bool>> expression,//filtreleme - where
                                              Func<IQueryable<T>,IOrderedQueryable<T>> orderBy=null //sıralama - order by
                                             );
     }

@@ -23,32 +23,44 @@ namespace CoreCrud.Infrastructure.Abstarct
         }
         public void Create(T entity)
         {
-            throw new NotImplementedException();
+            _table.Add(entity);
+            _context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            entity.IsActive = false;
+            //_table.Remove(entity); doğrudan virtabanından siler.
+            _context.SaveChanges();
         }
 
-        public List<TResult> GetByDefaults<TResult>(Expression<Func<T, TResult>> selector, Expression<Func<T, TResult>> expression, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
+        public List<TResult> GetByDefaults<TResult>
+            (Expression<Func<T, TResult>> selector, 
+            Expression<Func<T, bool>> expression, 
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _table;
+
+            if (orderBy != null) return orderBy(query).Where(expression).Select(selector).ToList();
+
+            return query.Where(expression).Select(selector).ToList();
+            
         }
 
         public T GetDefault(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _table.Where(expression).FirstOrDefault();
         }
 
         public List<T> GetDefaults(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _table.Where(expression).ToList();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _table.Update(entity);
+            _context.SaveChanges();
         }
     }
 }
