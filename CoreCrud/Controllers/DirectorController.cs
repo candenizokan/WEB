@@ -50,5 +50,21 @@ namespace CoreCrud.Controllers
             return View(dto);
         }
 
+        [HttpPost]
+        public IActionResult Update(UpdateDirectorDTO entity)
+        {
+            if (ModelState.IsValid)
+            {
+                Director director = _dRepo.GetDefault(a => a.ID == entity.ID);
+                director.FirstName = entity.FirstName;
+                director.LastName = entity.LastName;
+                director.BirthDate = entity.BirthDate;
+
+                _dRepo.Update(director);
+                return RedirectToAction("ListOfDirector");
+            }
+            return View(entity);
+        }
+
     }
 }
