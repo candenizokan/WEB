@@ -29,10 +29,17 @@ namespace CoreCrud.Controllers
                 Director director = new Director() { FirstName =dto.FirstName, LastName =dto.LastName,BirthDate =dto.BirthDate };
 
                 _dRepo.Create(director);
-                return RedirectToAction("List");
+                return RedirectToAction("ListOfDirector");
             }
             return View(dto);
         }
+
+
+        public IActionResult ListOfDirector() // sahip oldupum tüm aktif yönetmenleri görüntülemek
+        {
+            return View(_dRepo.GetDefaults(a=> a.IsActive));
+        }
+
 
     }
 }
