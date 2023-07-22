@@ -73,5 +73,12 @@ namespace CoreCrud.Controllers
             return View(director);
         }
 
+        [HttpPost]
+        public IActionResult Delete(Director director)
+        {
+            Director deletedDirector = _dRepo.GetDefault(a => a.ID == director.ID);
+            _dRepo.Delete(deletedDirector);
+            return RedirectToAction("ListOfDirector");
+        }
     }
 }
