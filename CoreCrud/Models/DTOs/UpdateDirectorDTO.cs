@@ -6,7 +6,7 @@ namespace CoreCrud.Models.DTOs
 {
     public class UpdateDirectorDTO
     {
-        public int ID { get; set; }
+        public int ID { get; set; } //kullanıcı görmez, değiştiremez. sadece posta düştüğünde kimin güncelleneceğinin bilinmesi gerekiyordu bu yüzden posta taşıdık
 
         [Required(ErrorMessage = "Bu alan boş bırakılamaz")] // boş bırakılamaz
         [MinLength(2, ErrorMessage = "İsim en az 2 karakter olmalı")] //min karakter sayısı
