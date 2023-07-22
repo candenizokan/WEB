@@ -1,0 +1,27 @@
+﻿@model UpdateActorDTO
+
+<div>
+    <form asp-action="Update" method="post">
+        <div class="form-group">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" type="text" class="form-control"/>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" type="text" class="form-control"/>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BirthDate"></label>
+            <input asp-for="BirthDate" type="text" class="form-control"/>
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="ID" type="hidden" />
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success offset-4 col-md-4" type="submit" value="Güncelle" />
+        </div>
+    </form>
+</div>

@@ -39,6 +39,8 @@ namespace CoreCrud
             services.AddScoped<IDirector, DirectorRepo>();
 
             //Todo : addscoped - addtransiet - addsingleton araştır
+
+            services.AddScoped<IActorRepo, ActorRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
