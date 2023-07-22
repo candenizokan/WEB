@@ -44,6 +44,10 @@ namespace CoreCrud.Controllers
         public IActionResult Update(int id) //not => asp-route da hangi ismi verdiysek o ismi burada kullanmalıyız.
         {
             Director director = _dRepo.GetDefault(a => a.ID == id);
+
+            UpdateDirectorDTO dto = new UpdateDirectorDTO() { ID=director.ID, FirstName=director.FirstName, LastName=director.LastName, BirthDate= director.BirthDate.Value};
+
+            return View(dto);
         }
 
     }
