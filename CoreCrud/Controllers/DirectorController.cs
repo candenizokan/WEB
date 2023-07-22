@@ -66,5 +66,12 @@ namespace CoreCrud.Controllers
             return View(entity);
         }
 
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Director director = _dRepo.GetDefault(a => a.ID == id);
+            return View(director);
+        }
+
     }
 }
