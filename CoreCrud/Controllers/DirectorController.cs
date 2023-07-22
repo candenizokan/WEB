@@ -40,6 +40,11 @@ namespace CoreCrud.Controllers
             return View(_dRepo.GetDefaults(a=> a.IsActive));
         }
 
+        [HttpGet]
+        public IActionResult Update(int id) //not => asp-route da hangi ismi verdiysek o ismi burada kullanmalıyız.
+        {
+            Director director = _dRepo.GetDefault(a => a.ID == id);
+        }
 
     }
 }
