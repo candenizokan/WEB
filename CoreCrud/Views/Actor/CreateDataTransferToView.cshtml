@@ -1,0 +1,34 @@
+﻿
+
+<h3> Burası CreateDataTransferToView actionın viewıdır</h3>
+
+
+<h5>    TEMPDATA    </h5>
+
+<ul>
+    @foreach (var item in TempData["weekList"] as List<string>)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<h5>    VIEWBAG </h5>
+
+<ul>
+    @foreach (var item in ViewBag.weekList2)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+
+<h5>    VIEWDATA    </h5>
+
+<ul>
+    @foreach (var item in ViewData["weekList3"] as List<string>)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<p> BUGÜNÜN TARİHİ : </p> @TempData["Bugün"]
