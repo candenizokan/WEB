@@ -1,4 +1,5 @@
 ﻿using CoreCrud.Infrastructure.Interfaces.Concrete;
+using CoreCrud.Views.VMs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreCrud.Controllers
@@ -18,6 +19,13 @@ namespace CoreCrud.Controllers
         {
 
             // elinde olan tüm aktörleri yönetmenleri öncce göstermem lazım. çünkü belki veritabanında ekleyeceğim yok.  tek bir sınıfın verisini taşımıyorsa başka sınıftanda veriler gelecekse VM yapmam lazım. dto bir sınıfın traşlanması gibi düşünebilirsin
+
+            //CreateMovieVM nesnesi oluşturmam lazım.
+
+            CreateMovieVM vm = new CreateMovieVM() 
+            {
+                Directors =// director repoya ihtiyacım oldu. o zaman ctorda director repoyu çağıracağım
+            };
             return View();
         }
 
