@@ -1,6 +1,7 @@
 ﻿using CoreCrud.Infrastructure.Interfaces.Concrete;
 using CoreCrud.Views.VMs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CoreCrud.Controllers
 {
@@ -24,9 +25,15 @@ namespace CoreCrud.Controllers
 
             //CreateMovieVM nesnesi oluşturmam lazım.
 
-            CreateMovieVM vm = new CreateMovieVM() 
+            CreateMovieVM vm = new CreateMovieVM()
             {
-                Directors =// director repoya ihtiyacım oldu. o zaman ctorda director repoyu çağıracağım
+                Directors = _dRepo.GetByDefaults
+                (
+                    selector:a =>new SelectListItem() { Text =a.FullName, Value = a.ID.ToString()},
+                    expression:a => a.IsActive
+                ),// director repoya ihtiyacım oldu. o zaman ctorda director repoyu çağıracağım. GetByDefaults IBASEREPODA vardı. seçim parametrem var hangi property alıyorsun, koşulunu yaz parametren expression, sıralama yapabileceğin parametren var. güncelde aktif olan kullanıcıları where yazacağım.
+
+               
             };
             return View();
         }
