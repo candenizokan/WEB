@@ -77,5 +77,26 @@ namespace CoreCrud.Controllers
             _aRepo.Delete(deletedActor);
             return RedirectToAction("ListOfActor");
         }
+
+
+        /*
+         
+         **VIEWBAG - VIEWDATA - TEMPDATA
+         *
+         *ViewBag, ViewData, TempData => data transfer to view yapılardır. Yani viewlara veri taşımak için kullandığımız yapılardır. List, string, datetime vb. yapıları taşıyabilirler.
+         *
+         *ViewBag => ViewData ile aynı çalışma mantığına sahiptir. Abstract controllerBase tarafından oluşmuşlardır. DYNAMIC tipte GET metoduna sahiptir
+         *
+         *ViewData => ViewDictionary (sözlük, yani anahtar değer eşleşmesi şeklinde çalışır.) tipinde oluşmuş GET ve SET metoduna sahiptir.
+         *
+         *ViewData, viewBag den daha hızlıdır ve sürüm olarak MVC 1.0 dan ileri sürümlerde vardır
+         *
+         *ViewBag ise MVC 3ç0 dan ve ileri sürümlerde vardır.
+         *
+         *VIEWBAG ile VİEWDATA oluştuğunu actionun viewlarında kullanılır ancak başka bir actionun viewında çalışmaz, taşınamaz. Action tetiklenip bu yapılar her yeniden oluştuğunda tek seferlik kullanılabilir hale gelirler ancak ilgili action scope (süslü parantez) dışında yaşayamazlar.
+         *
+         *TempData => Diğerleri ile benzer mantıktadır ANCAK diğerlerinden en büyük farkı oluştuktan sonra oluştuğu actionun dışında tek seferliğine mahsus çalışabilir acak başka actionda kullanılduğunda aynı zamanda kendi actionunda kullanılamaz. Başka actionun viewında kullanılırsa o sayfa yenilendiğinde tempdata kaybolur çünkü yenilenemez. Bu anlamda sonuç olarak oluştuğu actionun viewında her yenilendiğinde kullanabileceğini ancak kendi viewında kullanılmazsa başka viewda 1 kereliğine kullanabileceğini söyleyebiliriz.
+         
+         */
     }
 }
