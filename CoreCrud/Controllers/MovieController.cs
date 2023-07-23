@@ -1,6 +1,6 @@
 ﻿using CoreCrud.Infrastructure.Interfaces.Concrete;
 using CoreCrud.Models.DTOs;
-using CoreCrud.Views.VMs;
+using CoreCrud.Models.VMs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -44,7 +44,7 @@ namespace CoreCrud.Controllers
                     expression: a=> a.IsActive
                 )
             };
-            return View();
+            return View(vm);
         }
 
     }

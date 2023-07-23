@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CoreCrud.Views.VMs
+namespace CoreCrud.Models.VMs
 {
     public class CreateMovieVM
     {
         //MOVİE--film için iki input açarım kullanıcının yazdığını alırım
 
-        [Required(ErrorMessage ="İsimsiz film olamaz.")]
+        [Required(ErrorMessage = "İsimsiz film olamaz.")]
         public string Name { get; set; } // kullanıcıdan almam gerek. bu durumda validasyon gerekiyor.
 
         [Required(ErrorMessage = "Çıkış tarihi boş olamaz.")]
