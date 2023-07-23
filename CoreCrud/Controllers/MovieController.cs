@@ -92,5 +92,10 @@ namespace CoreCrud.Controllers
             return View(vm);
         }
 
+        public IActionResult List()
+        {
+            return View(_mrepo.GetDefaults(a=>a.IsActive));
+        }
+
     }
 }
