@@ -1,0 +1,13 @@
+﻿
+
+<p> BUGÜNÜN TARİHİ : </p> @TempData["Bugün"]
+
+
+<h5>    VIEWDATA    </h5>
+
+<ul>
+    @foreach (var item in ViewData["weekList3"] as List<string>)
+    {
+        <li>@item</li>
+    }
+</ul>
