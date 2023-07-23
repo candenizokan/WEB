@@ -1,1 +1,39 @@
 ﻿@model CreateMovieVM
+
+<div class="row">
+    <div class="card col-md-8 offset-2">
+        <h3>Make Film Panel</h3>
+        <div class="card-body">
+            <form method="post" asp-action="MakeFilm">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" type="text" class="form-control"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PublishData"></label>
+                    <input asp-for="PublishData" type="date" class="form-control"/>
+                    <span asp-validation-for="PublishData" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DirectorID"></label>
+                    <select asp-items="@Model.Directors" asp-for="DirectorID"><option disabled selected>Lütfen seçim yapınız</option></select>
+                    <span asp-validation-for="DirectorID" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+
+                    </div>
+                </div>
+
+
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
