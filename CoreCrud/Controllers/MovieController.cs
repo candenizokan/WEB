@@ -76,6 +76,19 @@ namespace CoreCrud.Controllers
                 _mrepo.Create(movie);
                 return RedirectToAction("List");
             }
+
+            //negatif senaryoda geri döndürmeden önce tekrardan doldurmam lazım
+
+            vm.Directors = _dRepo.GetByDefaults
+                (
+                    selector: a => new SelectListItem() { Text = a.FullName, Value = a.ID.ToString() },
+                    expression: a => a.IsActive
+                );
+            vm.Actors = _aRepo.GetByDefaults
+                (
+                    selector: a => new ActorDTO() { ActorID = a.ID, FullName = a.FullName, IsSelected = false },
+                    expression: a => a.IsActive
+                );
             return View(vm);
         }
 
