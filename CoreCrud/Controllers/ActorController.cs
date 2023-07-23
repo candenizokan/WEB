@@ -111,5 +111,10 @@ namespace CoreCrud.Controllers
             
             return View();
         }
+
+        public IActionResult Filter()
+        {
+            return View();
+        }
     }
 }
