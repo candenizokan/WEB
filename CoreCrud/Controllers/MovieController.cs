@@ -1,8 +1,10 @@
 ﻿using CoreCrud.Infrastructure.Interfaces.Concrete;
+using CoreCrud.Models.Concrete;
 using CoreCrud.Models.DTOs;
 using CoreCrud.Models.VMs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace CoreCrud.Controllers
 {
@@ -44,6 +46,36 @@ namespace CoreCrud.Controllers
                     expression: a=> a.IsActive
                 )
             };
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult MakeFilm(CreateMovieVM vm)
+        {
+            if (ModelState.IsValid)
+            {
+                Movie movie = new Movie()
+                {
+                    Name = vm.Name,
+                    PublishDate = vm.PublishDate,
+                    DirectorId= vm.DirectorID,
+                    Director =_dRepo.GetDefault(a=>a.ID==vm.DirectorID)
+                };
+
+                foreach (var item in vm.Actors.Where(a=>a.IsSelected))//seçili actorDtolar dönülecek
+                {
+                    MovieActor movieActor = new MovieActor()//önce ara tablo elemanlarını oluşturdun
+                    {
+                        ActorId = item.ActorID,
+                        Actor = _aRepo.GetDefault(a => a.ID == item.ActorID),
+                        Movie = movie
+                    };
+                    movie.MovieActors.Add(movieActor);//movie ekledin
+                }
+
+                _mrepo.Create(movie);
+                return RedirectToAction("List");
+            }
             return View(vm);
         }
 
