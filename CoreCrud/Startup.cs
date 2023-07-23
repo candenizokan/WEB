@@ -36,13 +36,20 @@ namespace CoreCrud
 
             //ben senden IDirector dediğimde DirectorRepo ver
 
-            services.AddScoped<IDirector, DirectorRepo>();
-
-            //Todo : addscoped - addtransiet - addsingleton araştır
+            services.AddScoped<IDirector, DirectorRepo>();            
 
             services.AddScoped<IActorRepo, ActorRepo>();
 
             services.AddScoped<IMovieRepo, MovieRepo>();
+
+            //Todo : addscoped - addtransiet - addsingleton araştır
+
+            //services.AddSingleton nesneyi bir kere oluşturayım sonsuz kullanayım. DirectorRepo yu bir kere oluşturayım her seslenildiğinde kullanayım. program olutuğunda istediği zaman vereyim. Özetle her istenen nesneden bir kez oluşturur ve çağrıldığun hep aynı nesneyi verir.
+
+            //services.AddTransient => geçici. her istekte bulunduğunda nesneyi oluşturur ve sonrasında dispose eder. her talepte yeni nesne oluşturur
+
+            //services.AddScoped => her istek geldiğinde nesneyi oluşturur ANCAK transietten farklı olarak hala nesne kullanımdayken yeni bir talep gelirse nesne oluşturmaz elindeki kullandırır.
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
