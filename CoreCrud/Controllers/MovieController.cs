@@ -14,7 +14,12 @@ namespace CoreCrud.Controllers
         }
 
 
+        public IActionResult MakeFilm()
+        {
 
+            // elinde olan tüm aktörleri yönetmenleri öncce göstermem lazım. çünkü belki veritabanında ekleyeceğim yok.  tek bir sınıfın verisini taşımıyorsa başka sınıftanda veriler gelecekse VM yapmam lazım. dto bir sınıfın traşlanması gibi düşünebilirsin
+            return View();
+        }
 
     }
 }
