@@ -2,6 +2,8 @@
 using CoreCrud.Models.Concrete;
 using CoreCrud.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
 namespace CoreCrud.Controllers
 {
@@ -98,5 +100,16 @@ namespace CoreCrud.Controllers
          *TempData => Diğerleri ile benzer mantıktadır ANCAK diğerlerinden en büyük farkı oluştuktan sonra oluştuğu actionun dışında tek seferliğine mahsus çalışabilir acak başka actionda kullanılduğunda aynı zamanda kendi actionunda kullanılamaz. Başka actionun viewında kullanılırsa o sayfa yenilendiğinde tempdata kaybolur çünkü yenilenemez. Bu anlamda sonuç olarak oluştuğu actionun viewında her yenilendiğinde kullanabileceğini ancak kendi viewında kullanılmazsa başka viewda 1 kereliğine kullanabileceğini söyleyebiliriz.
          
          */
+
+        public IActionResult CreateDataTransferToView()
+        {
+            TempData["weekList"] = new List<string> { "Pazartesi", "Salı", "Çarşamba" };
+            ViewBag.weekList2 = new List<string> { "Perşembe", "Cuma" };
+            ViewData["weekList3"] = new List<string> { "Cumartesi", "Pazar" };
+
+            TempData["Bugün"] = DateTime.Now;
+            
+            return View();
+        }
     }
 }
