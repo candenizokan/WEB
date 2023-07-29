@@ -102,7 +102,35 @@ namespace CoreCrud.Controllers
             //kimi güncelleyeceğim bulmam lazım
 
             Movie movie = _mrepo.GetDefault(a=> a.ID == id);//güncellenecek film
-            return View();
+
+            UpdateMovieVM vm = new UpdateMovieVM()
+            {
+                MovieID = movie.ID,
+                Name = movie.Name,
+                PublishDate = movie.PublishDate,
+                DirectorID = movie.DirectorId,
+                Directors = _dRepo.GetByDefaults
+                (selector: a => new SelectListItem() { Text = a.FullName, Value = a.ID.ToString() },
+                    expression: a => a.IsActive)//sahip olduğum tüm direktörleride göndereceğim
+            };
+
+            //tüm aktif aktörlemi dön diyorum
+            foreach (var item in _aRepo.GetDefaults(a=>a.IsActive))
+            {
+                //yeni bir actorDto nesnesi ekliyorsun. vm üzerine aktif her oyuncuyu seçilmemiş olarak ekledim
+                vm.Actors.Add(new ActorDTO() { ActorID = item.ID, FullName = item.FullName, IsSelected = false });
+
+                foreach (var actor in movie.MovieActors)//filmin üzerindeki seçili movieActor nesnelerini dönüyoruz
+                {
+                    if (actor.ActorId == item.ID)//bu aktör zaten seçilmiştir onun isSelectedını false değil true yapalım
+                    {
+                        vm.Actors.Find(a => a.ActorID == actor.ActorId).IsSelected = true;
+                    }
+                }
+            }
+
+
+            return View(vm);
         }
 
     }
