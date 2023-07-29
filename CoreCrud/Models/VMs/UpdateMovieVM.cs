@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CoreCrud.Models.DTOs;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreCrud.Models.VMs
@@ -15,5 +18,22 @@ namespace CoreCrud.Models.VMs
 
         [Required(ErrorMessage = "Çıkış tarihi boş olamaz.")]
         public DateTime PublishDate { get; set; } // kullanıcıdan almam gerek. bu durumda validasyon gerekiyor.
+
+
+        //Directors
+
+        //yönetmenin id si lazım ve bu benim için gerekli
+        [Required(ErrorMessage = "lütfen yönetmen seç")]
+        public int DirectorID { get; set; }
+
+        //sahip olduum tüm yönetmenleri götürmeliyim
+
+        public List<SelectListItem> Directors { get; set; }//bir tanesini seçtirim oda benim directorid olur
+
+        //Actors
+
+        //list yapısı içinde actorDto ile alabilirim
+
+        public List<ActorDTO> Actors { get; set; }
     }
 }
