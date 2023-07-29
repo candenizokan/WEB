@@ -133,5 +133,43 @@ namespace CoreCrud.Controllers
             return View(vm);
         }
 
+        [HttpPost]
+        public IActionResult Edit(UpdateMovieVM vm)
+        {
+            if (ModelState.IsValid && vm.Actors.Any(a=>a.IsSelected))//hiç seçilmiş olan var mı
+            {
+                //eski bilgileri alıp güncellemek istediğime atayacağım
+
+                Movie updateMovie = _mrepo.GetDefault(a=> a.ID == vm.MovieID);
+                updateMovie.Name = vm.Name;
+                updateMovie.PublishDate = vm.PublishDate;
+                updateMovie.DirectorId = vm.DirectorID;
+                updateMovie.Director = _dRepo.GetDefault(a => a.ID == vm.DirectorID);
+
+                //elimde eski mevcuttaki movide list yapısı var ara tablo elmanları var moviactor nesneleri var. cm deki actordto larla taşıdım. film üzerindeki mevcut list yapısındakilerin komple hepsini sil oyuncuları. sonra isselected da seçilmiş olanları ekle
+
+                updateMovie.MovieActors.RemoveAll(a=>a.MovieId==vm.MovieID);//filmin üzerindeki tüm movieActor nesneleri silinir.
+                foreach (var item in vm.Actors.Where(a=>a.IsSelected))// vm üzerindeki sadece seçili actorDTOlar dönüldü
+                {
+                    updateMovie.MovieActors.Add(new MovieActor() // mevcuttaki güncellenecek movie üzerine eklendi
+                    {
+                        Movie = updateMovie,
+                        MovieId = updateMovie.ID,
+                        ActorId = item.ActorID,
+                        Actor = _aRepo.GetDefault(a => a.ID == item.ActorID)
+                    });
+                }
+
+                _mrepo.Update(updateMovie);
+                return RedirectToAction("List");
+
+            }
+
+
+
+
+            return View(vm);
+        }
+
     }
 }
