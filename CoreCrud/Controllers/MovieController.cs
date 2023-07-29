@@ -118,7 +118,7 @@ namespace CoreCrud.Controllers
             foreach (var item in _aRepo.GetDefaults(a=>a.IsActive))
             {
                 //yeni bir actorDto nesnesi ekliyorsun. vm üzerine aktif her oyuncuyu seçilmemiş olarak ekledim
-                vm.Actors.Add(new ActorDTO() { ActorID = item.ID, FullName = item.FullName, IsSelected = false });
+                vm.Actors.Add(new ActorDTO() { ActorID = item.ID, FullName = item.FullName, IsSelected = false });//elinde sepet yokken eklemeye çalışıyorsan hata alırsın. ya buraya gelmeden hemen önce newleyip ayağa kaldırman lazım. yada ilk oluşturduğun yerde yapman lazım.updatemovievm de ctorda newle oluştur.
 
                 foreach (var actor in movie.MovieActors)//filmin üzerindeki seçili movieActor nesnelerini dönüyoruz
                 {

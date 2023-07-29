@@ -8,6 +8,10 @@ namespace CoreCrud.Models.VMs
 {
     public class UpdateMovieVM
     {
+        public UpdateMovieVM()
+        {
+            Actors = new List<ActorDTO>();
+        }
         //Movie
 
         //sıfırdan film yaratmı9yorum. ilgili nesnenin id sine gerek var burada. kimi güncelleyeceğimi bilmem için id lazım onu getirmem lazım. 
