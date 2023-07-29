@@ -165,8 +165,37 @@ namespace CoreCrud.Controllers
 
             }
 
+            vm.Directors = _dRepo.GetByDefaults
+                (
+                    selector: a => new SelectListItem() { Text = a.FullName, Value = a.ID.ToString() },
+                    expression: a => a.IsActive
+                );
 
+            
+            //tüm aktif oyuncuları gez. 
+            foreach (var item in _aRepo.GetDefaults(a=>a.IsActive))
+            {
+                foreach (var actor in vm.Actors)
+                {
+                    if (actor.ActorID==item.ID)
+                        actor.FullName=item.FullName;
+                    
+                }
+            }
 
+            //vm.Actors.Clear();
+
+            //foreach (var item in _aRepo.GetDefaults(a=>a.IsActive))//veritabanındaki tüm aktif aktörleri alalım
+            //{
+            //    vm.Actors.Add(new ActorDTO() { ActorID = item.ID, FullName = item.FullName, IsSelected = false });
+
+            //    foreach (var actor in _mrepo.GetDefault(a=>a.ID==vm.MovieID).MovieActors)//benim filmim üzerindeki movieActorslerin listesini aldım
+            //    {
+            //        if (actor.ActorId==item.ID)
+            //            vm.Actors.Find(a=>a.ActorID == actor.ActorId).IsSelected = true;
+
+            //    }
+            //}
 
             return View(vm);
         }
