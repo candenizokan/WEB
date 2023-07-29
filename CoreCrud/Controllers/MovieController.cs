@@ -125,7 +125,7 @@ namespace CoreCrud.Controllers
                     if (actor.ActorId == item.ID)//bu aktör zaten seçilmiştir onun isSelectedını false değil true yapalım
                     {
                         vm.Actors.Find(a => a.ActorID == actor.ActorId).IsSelected = true;
-                    }
+                    }//seçilmemişlerle seçilmişleri kıyaslayıp seçilmişlerin is selectedını true yapıyorum
                 }
             }
 
