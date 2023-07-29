@@ -183,6 +183,8 @@ namespace CoreCrud.Controllers
                 }
             }
 
+
+            //2.seçenk aktörleri getirmek için
             //vm.Actors.Clear();
 
             //foreach (var item in _aRepo.GetDefaults(a=>a.IsActive))//veritabanındaki tüm aktif aktörleri alalım
