@@ -202,5 +202,20 @@ namespace CoreCrud.Controllers
             return View(vm);
         }
 
+
+        public IActionResult Delete(int id)
+        {
+            Movie movie = _mrepo.GetDefault(a => a.ID == id);
+            _mrepo.Delete(movie);
+            return RedirectToAction("List");//beni bu isimli actiona yönlendir.
+        }
+
+        public IActionResult Details(int id)
+        {
+            Movie movie = _mrepo.GetDefault(a => a.ID == id);
+            
+            return View(movie);
+        }
+
     }
 }
