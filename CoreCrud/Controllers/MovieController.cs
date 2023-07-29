@@ -97,5 +97,13 @@ namespace CoreCrud.Controllers
             return View(_mrepo.GetDefaults(a=>a.IsActive));
         }
 
+        public IActionResult Edit( int id)
+        {
+            //kimi güncelleyeceğim bulmam lazım
+
+            Movie movie = _mrepo.GetDefault(a=> a.ID == id);//güncellenecek film
+            return View();
+        }
+
     }
 }
