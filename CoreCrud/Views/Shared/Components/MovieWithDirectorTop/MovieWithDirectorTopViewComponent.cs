@@ -17,7 +17,8 @@ namespace CoreCrud.Views.Shared.Components.MovieWithDirectorTop
         //en çok filmi olan 3 yönetmeni alalım.
         public IViewComponentResult Invoke()
         {
-            List<Director> list = _dRepo.GetDefaults(a=>a.IsActive).OrderByDescending(a=>a.Movies.Where(a=>a.IsActive).Count()).Take(3).ToList();
+            List<Director> list = _dRepo.GetDefaults(a=>a.IsActive).OrderByDescending(a=>a.Movies.Where(a=>a.IsActive).Count()).Take(3).ToList();//aktif film olanlara göre maksimumları seçer
+            //viewde hangisi aktifse onu basacağım. burada silinmişlerde geliyor. onu orada yöneteceğim
 
             return View(list);
         }
