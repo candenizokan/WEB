@@ -13,6 +13,8 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Yonetici\Data\" />
+    <Folder Include="Areas\Yonetici\Models\" />
   </ItemGroup>
 
 </Project>
