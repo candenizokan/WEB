@@ -44,6 +44,14 @@ namespace AreaProject
 
             app.UseEndpoints(endpoints =>
             {
+                //area için route, exists:varsa içeriyorsa
+
+                endpoints.MapControllerRoute
+                (
+                    name:"area",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
